@@ -11,7 +11,7 @@ class Barrier {
     ypos = y;
     xpos = x;
   }
-  
+
   void update() {
     extend = xpos + ypos;
   }

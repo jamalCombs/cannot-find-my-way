@@ -43,37 +43,23 @@ class Stalker extends Walker {
     }
   }
 
-
   void applyForce(PVector force) {
     // apply force or mass here
     acceleration.add(force);
   }
 
-  //PVector seek(PVector target) {
-  //  PVector desired = PVector.sub(target, location);
-  //  desired.normalize();
-  //  desired.mult(maxspeed);
-
-  //  // steering equals desired minus velocity
-  //  PVector steer = PVector.sub(desired, velocity);
-
-  //  steer.limit(maxforce);
-
-  //  applyForce(steer);
-
-  //  return steer;
-  //}
-
-  void seek(PVector target) {
-    PVector desired = PVector.sub(target, location);  // A vector pointing from the location to the target
-
-    // Normalize desired and scale to maximum speed
+  PVector seek(PVector target) {
+    PVector desired = PVector.sub(target, location);
     desired.normalize();
     desired.mult(maxspeed);
-    // Steering = Desired minus velocity
+
+    // steering equals desired minus velocity
     PVector steer = PVector.sub(desired, velocity);
-    steer.limit(maxforce);  // Limit to maximum steering force
+
+    steer.limit(maxforce);
 
     applyForce(steer);
+
+    return steer;
   }
 }

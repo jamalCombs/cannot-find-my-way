@@ -11,7 +11,7 @@ void setup() {
   size(800, 400);
   frameRate(30);
 
-  // Create objects
+  // create objects
   w = new Walker();
   s = new Stalker(width/2, height/2);
   b = new Barrier(4, 5, 10);
@@ -25,21 +25,9 @@ void setup() {
 void draw() {
   background(239, 134, 131);
 
-  // Run the walker object
+  // run the walker object
   //w.walk();
   //w.display();
-  //s.seek(movers[0].position);
-  ////println(s.seek(movers[0].position));
-  ////s.walk();
-  //s.display();
-  //s.update();
-
-
-  //s.seek(mouse);
-  //b.display();
-  //b.update();
-
-
 
   for (int i = 0; i < movers.length; i++) {
     PVector wind = new PVector(0.01, 0);
@@ -73,20 +61,19 @@ void draw() {
   }
 
   s.seek(movers[0].position);
-  //println(s.seek(movers[0].position));
-  //s.walk();
   s.display();
   s.update();
 }
 
-void keyPressed() {
-  switch(key) {
-  case ' ':
-    println(movers[0].position);
-    s.seek(movers[0].position);
-    s.display();
-    s.update();
-    println(s.location);
-    break;
-  }
-}
+// use for debugging
+//void keyPressed() {
+//  switch(key) {
+//  case ' ':
+//    println(movers[0].position);
+//    s.seek(movers[0].position);
+//    s.display();
+//    s.update();
+//    println(s.location);
+//    break;
+//  }
+//}
