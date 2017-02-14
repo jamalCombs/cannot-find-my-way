@@ -3,12 +3,12 @@ import java.util.Iterator;
 Stalker s;
 Walker w;
 Barrier b;
-Mover[] movers = new Mover[50];
+Mover[] movers = new Mover[5];
 ArrayList<Particle> particles;
 int numOfParticles = 3;
 
 void setup() {
-  size(800, 800);
+  size(800, 400);
   frameRate(30);
 
   // Create objects
@@ -59,18 +59,18 @@ void draw() {
     movers[i].checkEdges();
   }
 
-  //for (int i = 0; i < numOfParticles; i++) {
-  //  particles.add(new Particle(random(1, 2), random(0, width), random(0, height), random(0.5, 3), random(5, 15)));
-  //}
+  for (int i = 0; i < numOfParticles; i++) {
+    particles.add(new Particle(random(1, 2), random(0, width), random(0, height), random(0.5, 3), random(5, 15)));
+  }
 
-  //Iterator<Particle> it = particles.iterator();
-  //while (it.hasNext()) {
-  //  Particle p = it.next();
-  //  p.update();
-  //  if (p.isDead()) {
-  //    it.remove();
-  //  }
-  //}
+  Iterator<Particle> it = particles.iterator();
+  while (it.hasNext()) {
+    Particle p = it.next();
+    p.update();
+    if (p.isDead()) {
+      it.remove();
+    }
+  }
 
   s.seek(movers[0].position);
   //println(s.seek(movers[0].position));

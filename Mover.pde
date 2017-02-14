@@ -25,7 +25,7 @@ class Mover {
   
   void display() {
     noStroke();
-    fill(15, 15, 15);
+    fill(255);
     ellipse(position.x, position.y, mass * 16, mass * 16);
 
   }
