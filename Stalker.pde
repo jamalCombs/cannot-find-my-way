@@ -22,7 +22,7 @@ class Stalker extends Walker {
   void display() {
     rectMode(CENTER);
     noFill();
-    stroke(255);
+    stroke(0);
     rect(location.x, location.y, 16, 16);
   }
 

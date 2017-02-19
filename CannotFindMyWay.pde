@@ -1,11 +1,12 @@
 import java.util.Iterator;
 
+// global variable
 Stalker s;
 Walker w;
 Barrier b;
-Mover[] movers = new Mover[5];
+Mover[] movers = new Mover[2];
 ArrayList<Particle> particles;
-int numOfParticles = 3;
+int numOfParticles = 1;
 
 void setup() {
   size(800, 400);
@@ -14,16 +15,16 @@ void setup() {
   // create objects
   w = new Walker();
   s = new Stalker(width/2, height/2);
-  b = new Barrier(4, 5, 10);
+  //b = new Barrier(4, 5, 10);
   particles = new ArrayList<Particle>();
 
   for (int i = 0; i < movers.length; i++) {
-    movers[i] = new Mover(random(1, 10), random(width), 0);
+    movers[i] = new Mover(random(1, 10), random(width), 15, 15, 0);
   }
 }
 
 void draw() {
-  background(239, 134, 131);
+  background(255);
 
   // run the walker object
   //w.walk();
@@ -43,9 +44,12 @@ void draw() {
     movers[i].applyForce(wind);
     movers[i].applyForce(gravity);
     movers[i].update();
-    movers[i].display();
+    movers[i].render();
     movers[i].checkEdges();
+    
   }
+
+
 
   for (int i = 0; i < numOfParticles; i++) {
     particles.add(new Particle(random(1, 2), random(0, width), random(0, height), random(0.5, 3), random(5, 15)));

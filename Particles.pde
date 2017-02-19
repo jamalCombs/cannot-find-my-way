@@ -41,7 +41,7 @@ class Particle {
     y += dy;
     lifespan += 2;
     noFill();
-    stroke(lifespan, 100 - lifespan, 255);
+    stroke(0);
     ellipse(x + sin(radians(acceleration)) * diffuse, y + cos(radians(acceleration)) * diffuse, 8, 8);
     acceleration += acceleratorSpeed;
   }
