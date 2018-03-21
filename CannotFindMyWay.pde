@@ -1,6 +1,5 @@
 import java.util.Iterator;
 
-// global variable
 Stalker s;
 Walker w;
 Barrier b;
@@ -12,10 +11,8 @@ void setup() {
   size(800, 400);
   frameRate(30);
 
-  // create objects
   w = new Walker();
   s = new Stalker(width/2, height/2);
-  //b = new Barrier(4, 5, 10);
   particles = new ArrayList<Particle>();
 
   for (int i = 0; i < movers.length; i++) {
@@ -25,10 +22,6 @@ void setup() {
 
 void draw() {
   background(255);
-
-  // run the walker object
-  //w.walk();
-  //w.display();
 
   for (int i = 0; i < movers.length; i++) {
     PVector wind = new PVector(0.01, 0);
@@ -46,10 +39,7 @@ void draw() {
     movers[i].update();
     movers[i].render();
     movers[i].checkEdges();
-    
   }
-
-
 
   for (int i = 0; i < numOfParticles; i++) {
     particles.add(new Particle(random(1, 2), random(0, width), random(0, height), random(0.5, 3), random(5, 15)));
@@ -68,16 +58,3 @@ void draw() {
   s.display();
   s.update();
 }
-
-// use for debugging
-//void keyPressed() {
-//  switch(key) {
-//  case ' ':
-//    println(movers[0].position);
-//    s.seek(movers[0].position);
-//    s.display();
-//    s.update();
-//    println(s.location);
-//    break;
-//  }
-//}
