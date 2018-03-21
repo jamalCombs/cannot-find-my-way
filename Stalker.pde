@@ -16,7 +16,6 @@ class Stalker extends Walker {
     r = 6;
     maxspeed = 4.0;
     maxforce = 0.1;
-    //noff = new PVector(random(1000), random(1000));
   }
   
   void display() {
