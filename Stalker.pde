@@ -18,7 +18,7 @@ class Stalker extends Walker {
     maxforce = 0.1;
     //noff = new PVector(random(1000), random(1000));
   }
-  // *weird inheritance issue*
+  
   void display() {
     rectMode(CENTER);
     noFill();
