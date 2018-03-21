@@ -25,6 +25,7 @@ class Particle {
       }
       dy = random(-4, 4);
       dx = 0;
+      
     } else {
       if (x < width / 2) {
         x = -10;
