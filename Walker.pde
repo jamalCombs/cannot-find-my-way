@@ -1,7 +1,3 @@
-// The Nature of Code
-// Daniel Shiffman
-// http://natureofcode.com
-
 class Walker {
   PVector location;
   PVector velocity;
@@ -9,7 +5,6 @@ class Walker {
   PVector noff;
   float radius;
   float distX, distY;
-
 
   Walker() {
     location = new PVector(width/2, height/2);
@@ -44,15 +39,3 @@ class Walker {
     location.x = constrain(location.x, 0, width-1);
     location.y = constrain(location.y, 0, height-1);
   }
-
-  //void eat(Mover[] movers) {
-  //  // for loop here to check each Mover mover = movers[i] inside the loop
-  //   for (int i = 0; i < movers.length; i++) {
-  //     distX = PVector.abs(i.x - location.x - location.y / 2);
-  //     distY = PVector.abs(i.x - location.y - location.x / 2);
-  //     if (distX <= (location.x / 2) || distY <= (location.y / 2)) {
-  //       print("Collided");
-  //     }
-  //   }
-  // }
-}
