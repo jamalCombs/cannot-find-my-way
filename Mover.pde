@@ -20,7 +20,6 @@ class Mover {
   int x, y;
   int minRad, maxRad;
 
-
   Mover(float m, float x, int minSize, int maxSize, float y) {
     mass = m;
     position = new PVector(x, y);
@@ -30,11 +29,9 @@ class Mover {
     maxRad = (int) maxSize;
   }
 
-
   void render() {
     translate(position.x, position.y);
     stroke(0);
-
     findNextCoords(0);
     float px = dx, py = dy;
     int i = 0;
@@ -43,9 +40,8 @@ class Mover {
       findNextCoords(i);
       line(px, py, px = dx, py = dy);
     }
-
+    
     resetMatrix();
-    //ellipse(position.x, position.y, mass * 16, mass * 16);
   }
 
   void applyForce(PVector force) {
